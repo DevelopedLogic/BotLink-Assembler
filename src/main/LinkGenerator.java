@@ -11,9 +11,9 @@ public class LinkGenerator extends ListenerAdapter{
 		if(message[0].equals(prefix+"gl")){
 			if(message.length < 2){
 				event.getChannel().sendMessage("Usage: `"+prefix+"gl <client ID> (permission number)`").queue();
-			}else if(message[2] != null){
+			}else if(message.length == 2){
 				event.getChannel().sendMessage("https://discordapp.com/oauth2/authorize?client_id="+message[1]+"&scope=bot&permissions=0").queue();
-			}else{
+			}else if(message.length == 3){
 				event.getChannel().sendMessage("https://discordapp.com/oauth2/authorize?client_id="+message[1]+"&scope=bot&permissions="+message[2]).queue();
 			}
 		}
